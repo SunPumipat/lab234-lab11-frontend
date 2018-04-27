@@ -15,6 +15,7 @@ install:
 script:
 - docker build -t sunjido/se234-lab11-frontend .
 - docker push sunjido/se234-lab11-frontend
+- docker-compose -H "tcp://52.14.107.181:2000" up -d
 after_success:
   - scp -i "lab10.pem" -r docker-compose.yml ubuntu@52.14.107.181:/home/ubuntu/
 service: docker
