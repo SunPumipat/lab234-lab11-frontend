@@ -15,15 +15,8 @@ install:
 script:
 - docker build -t sunjido/se234-lab11-frontend .
 - docker push sunjido/se234-lab11-frontend
-- docker-compose -H "tcp://52.14.107.181:2000" up -d
-- docker-compose pull
-after_success:
-  - scp -i "lab10.pem" -r docker-compose.yml ubuntu@52.14.107.181:/home/ubuntu/
 service: docker
 env:
   global:
   - secure: Z7jzjZeYuW0QtNKT+592aZ/itrij3mqXwJaHLXYRiCxj577MSAyF45otCKXBuwTuvuYtpSnai6Ijp5NRIPCiiNeS2Qrj5FgXD0+IGCX9/KHZsBU8J0RRhD0VuD6yjUQaqDdjRwQZC3GXJ2roPaGTkW50iAPu8MVDyrs0eN+Rmj5znenOQ5bFOezRcrS9FQfBbAs+huZ8RB1zafcBbwx7C0bCRV79ppRJ5BeuZ1ichkUSxa5hnEDvHd9PHvGdqQSc2M+EK5H5c36fb09x6HrhcQGt2E0NmZPiW3eB8DxpLeKU0QdO3EJ46uRM3jR4GNq5bZtg2UxhxbbAtEzohVYJxO/AXTfcviJ+F9/fPUVe/9vfvaqiM94h/3IrTWBOjqDKx7JrajEel+TKz9Fnk756tuPH3qh6UOxynhkZO976sf0K83r15VdbpxOqcSSm3Bhp0nJIkQPlyfK+fbVN/AlyaAeEmSCEehI0WXzbq8XH0igT8hfDH+yz6cz+GpzSGDHWTGeCPlPOG2Sj7Z8Vj/WDUamSpUaBzDA61fX0swWaPt3s/QTAHmdgw0iQ2UkLU27shZ5fyuCeNTe/ZJbLqYu/bSHT+H+uRR/AyPzrR8g1i+wJ6wW4g6cPP+ghNwdJndK8oOP/NhE9CXczEGh6yakbzBYgaumlla+mM1+0gFhZSxg=
   - secure: sOAz10BdCUr2r4blXTqaZ33ZmZy+qig3HkiMMLyoibpBke/hpPAMKLkcdm0kyPbY1Tu4vsNh24VqlQhzjgbRv0+JAw8B3KRayEtcIh0sbXfO38ATHLEXShSEKjnmjXc/oIO6h724XU7PyFwB6vDTloSajFS25T5fcPr25dOPyivytlrKAqN7i2bnuWCDNEo1Y179glJFVChiJU3gXUyp3k59WtMLOcpjKrBE12i+aNYBVRj4sOaz7qSWfgNmOlwsNxVSi6ahtQWJFkmmmEPWlIGdJXI8Cwx6M5b+j/e+B9qzIgSVxqpYqAs+SwrA2iLyUKnsipQ+whYWY3IpjVIg6XAs6CuV333tYDGv8Vg8LKoz3hLly7BN3D+AZCACDJEgSwU2u8y6DVD156rCiYi9U7DhzDlAFjb/TFHSaLQHLBmiXPkTxbm97NOilTIAaZIHBaTw4cYpHFblBSRzgPlXGTB6M19fXlcStV0rpWo6wfX1sCN7JfalRdSoMAGE/GrSGL1ytwXHnRVVYgeu6nuCHAZD6a07L+bzfpib6uiA1Kr6Y5UoFhf+nSOAUZbIBiDg3+Mw3ssNL0bIBuBjiY9BeuCQnV64YbkaiY/y07UvpkJGd4n42H/GI0zeule1Js+Q7CC+yUZXTJwD8+VEPVxgNPzjupz5OPnllAVPgeF+UO4=
-addons:
-  ssh_known_hosts:
-    - 52.14.107.181
